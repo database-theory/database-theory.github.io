@@ -30,7 +30,7 @@ jobs:
     - name: Convert Markdown Files to HTML
       run: |
         for file in ./blogs/*.md; do
-          docker run --rm -v $PWD:/data pandoc/core:2.9 "$file" -o "${file%.md}.html"
+          docker run --rm -v $PWD:/data pandoc/core:2.9 -o "${file%.md}.html" "$file"
         done
   # Single deploy job since we're just deploying
   deploy:
