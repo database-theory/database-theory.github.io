@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Convert Markdown Files to HTML
+      - name: Convert Markdown Blogs to HTML
         run: |
           for file in ./blogs/*.md; do
             docker run --rm -v $PWD:/data pandoc/core:2.9 -o "${file%.md}.html" "$file"
