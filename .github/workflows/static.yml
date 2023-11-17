@@ -22,6 +22,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  convert-markdown:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    - name: Convert Markdown Files to HTML
+      run: |
+        for file in ./blogs/*.md; do
+          docker run --rm -v $PWD:/data pandoc/core:2.9 "$file" -o "${file%.md}.html"
+        done
   # Single deploy job since we're just deploying
   deploy:
     environment:
