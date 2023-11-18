@@ -1,6 +1,6 @@
-# How to Contribute a Blog
+# How to Contribute a Blog Post
 
-Write your blog in [markdown](https://commonmark.org/help/).
+Write your blog post in [markdown](https://commonmark.org/help/).
 You can embed LaTeX equations, and use any extension supported by [pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown).
 See examples in [blogs](./blogs).
 
