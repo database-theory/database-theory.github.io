@@ -36,7 +36,7 @@ jobs:
       - name: Convert Markdown Blogs to HTML
         run: |
           for file in ./blogs/*.md; do
-            docker run --rm -v $PWD:/data pandoc/core:2.9 \
+            docker run --rm -v $PWD:/data pandoc/core:3.1 \
                 -f markdown+inline_code_attributes+superscript \
                 -t html --katex -s \
                 -V maxwidth=650px \
